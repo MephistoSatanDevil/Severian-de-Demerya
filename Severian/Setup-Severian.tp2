@@ -40,6 +40,10 @@ LANGUAGE ~Francais~
 	 ~french~
 	 ~Severian/Translations/French/Setup.tra~
 
+LANGUAGE ~Schinese~
+	 ~schinese~
+	 ~Severian/Translations/schinese/Setup.tra~
+
 BEGIN @0
 LABEL ~Coyote-Severian-Main~				
 
@@ -140,8 +144,8 @@ APPEND ~ACTION.IDS~ ~113 ForceSpellRES(S:RES*,O:Target)~
              UNLESS ~113 ForceSpellRES(S:RES\*,O:Target)~
 APPEND ~ACTION.IDS~ ~114 ForceSpellPointRES(S:RES*,P:Target)~
              UNLESS ~114 ForceSpellPointRES(S:RES\*,P:Target)~
-APPEND ~ACTION.IDS~ ~147 RemoveSpellRES(S:Spell*)~
-             UNLESS ~147 RemoveSpellRES(S:Spell\*)~
+APPEND ~ACTION.IDS~ ~147 RemoveSpellRES(S:RES*)~
+             UNLESS ~147 RemoveSpellRES(S:RES\*)~
 APPEND ~ACTION.IDS~ ~160 ApplySpellRES(S:RES*,O:Target)~
              UNLESS ~160 ApplySpellRES(S:RES\*,O:Target)~
 APPEND ~ACTION.IDS~ ~181 ReallyForceSpellRES(S:RES*,O:Target)~
@@ -318,22 +322,22 @@ WRITE_SHORT 0x246 0x4000 + ~%PISTEUR%~
 // Compilation des fichiers dialogues de Severian (SoA)
 
 COMPILE ~Severian/Dialogues/#Sever.d~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 
 COMPILE ~Severian/Dialogues/#SeverJ.d~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 
 COMPILE ~Severian/Dialogues/#SBSever.d~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 
 COMPILE ~Severian/Dialogues/#SeverR.d~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 
 //COPY ~Severian/Spells/#SMalus2.spl~ ~override~
 COPY ~Severian/Spells/#SMalus4.spl~ ~override~ SAY NAME1 ~~ SAY NAME2 ~~
 
 COMPILE ~Severian/Scripts/#Sever.baf~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 
 // Compilation armure personnelle de Severian
 
@@ -349,7 +353,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SOnyx25.cre~ ~override~
 SAY NAME1 @200014
 SAY NAME2 @200014
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SOnyx25.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SOnyx25.baf~
 
 
@@ -359,17 +363,17 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SValy25.cre~ ~override~
 SAY NAME1 @32
 SAY NAME2 @32
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SValy25.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SValy25.baf~
 
 
 // COMPILATION FICHIERS DIALOGUES DE SEVERIAN POUR THRONE OF BHAAL
 
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#Sev25J.d~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SBSev25.d~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 
 // Valyria (ToB)
 
@@ -377,20 +381,20 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SValy3.cre~ ~override~
 SAY NAME1 @32
 SAY NAME2 @32
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SValy3.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SValy3.baf~
 
 // COMPILATION FICHIERS DIALOGUES DE SEVERIAN POUR THRONE OF BHAAL (SUITE)
 
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#Sev25R.d~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#Sev25P.d~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SevD25.baf~
     EVALUATE_BUFFER
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 
 // COMPILATION CREATURES POUR THRONE OF BHAAL (SUITE)
 
@@ -401,7 +405,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SMask.cre~ ~override~
 SAY NAME1 @200000
 SAY NAME2 @200000
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SMask.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SMask.baf~
 
 // Reflet
@@ -410,7 +414,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SReflet.cre~ ~override~
 SAY NAME1 @200001
 SAY NAME2 @200001
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SReflet.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SReflet.baf~
 
 // Les brigands du Téthyr
@@ -419,70 +423,70 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SWilos.cre~ ~override~
 SAY NAME1 @200002
 SAY NAME2 @200002
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SWilos.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SWilos.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SMaryan.cre~ ~override~
 SAY NAME1 @200005
 SAY NAME2 @200005
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SMaryan.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SMaryan.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SLittle.cre~ ~override~
 SAY NAME1 @200008
 SAY NAME2 @200008
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SLittle.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SLittle.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SPetit.cre~ ~override~
 SAY NAME1 @200004
 SAY NAME2 @200004
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SPetit.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SPetit.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SWilos2.cre~ ~override~
 SAY NAME1 @200002
 SAY NAME2 @200002
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SWilos2.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SWilos2.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SMarya2.cre~ ~override~
 SAY NAME1 @200005
 SAY NAME2 @200005
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SMarya2.d~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SMarya2.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SPetit2.cre~ ~override~
 SAY NAME1 @400036
 SAY NAME2 @400036
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SPetit2.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SPetit2.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SPetit3.cre~ ~override~
 SAY NAME1 @400036
 SAY NAME2 @400036
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SPetit3.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SPetit3.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SAzeem.cre~ ~override~
 SAY NAME1 @200006
 SAY NAME2 @200006
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SAzeem.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SAzeem.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SFrere.cre~ ~override~
 SAY NAME1 @200007
 SAY NAME2 @200007
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SFrere.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SFrere.baf~
 
 // Onyx - chiot
@@ -491,7 +495,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SChien.cre~ ~override~
 SAY NAME1 @200010
 SAY NAME2 @200010
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SChien.d~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SChien.baf~
 
 // Severian - enfant
@@ -500,7 +504,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SGarc25.cre~ ~override~
 SAY NAME1 @200011
 SAY NAME2 @200011
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SGarc25.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SGarc25.baf~
 
 // Severian - adolescent
@@ -509,7 +513,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SAdo25.cre~ ~override~
 SAY NAME1 @200011
 SAY NAME2 @200011
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SAdo25.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SAdo25.baf~
 
 // Les catins de l'Arbre à chopines
@@ -518,7 +522,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SFahmi.cre~ ~override~
 SAY NAME1 @200021
 SAY NAME2 @200021
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SFahmi.d~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SFahmi.baf~
 
 // Gardes - Arbre à Chopines
@@ -527,14 +531,14 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SGarde2.cre~ ~override~
 SAY NAME1 @200024
 SAY NAME2 @200024
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SGarde2.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SGarde2.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SGarde1.cre~ ~override~
 SAY NAME1 @200025
 SAY NAME2 @200025
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SGarde1.d~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SGarde1.baf~
 
 
@@ -544,7 +548,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SJolent.cre~ ~override~
 SAY NAME1 @200022
 SAY NAME2 @200022
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SJolent.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SJolent.baf~
 
 // Sorkailen (ToB)
@@ -553,7 +557,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SRas25.cre~ ~override~
 SAY NAME1 @25
 SAY NAME2 @25
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SRas25.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SRas25.baf~
 
 // Vesthara (ToB)
@@ -562,7 +566,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SVes25.cre~ ~override~
 SAY NAME1 @27
 SAY NAME2 @27
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SVes25.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SVes25.baf~
 
 
@@ -572,7 +576,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SElva25.cre~ ~override~
 SAY NAME1 @200012
 SAY NAME2 @200012
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SElva25.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SElva25.baf~
 
 // Alys Stark
@@ -581,7 +585,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SAlys.cre~ ~override~
 SAY NAME1 @200013
 SAY NAME2 @200013
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SAlys.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SAlys.baf~
 
 // Volo
@@ -590,7 +594,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SVolo.cre~ ~override~
 SAY NAME1 @200015
 SAY NAME2 @200015
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SVolo.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SVolo.baf~
 
 // Scène du feu de camp (Amkethran)
@@ -599,14 +603,14 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SChaFeu.cre~ ~override~
 SAY NAME1 @46
 SAY NAME2 @46
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SChaFeu.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SChaFeu.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SevFeu.cre~ ~override~
 SAY NAME1 @45
 SAY NAME2 @45
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SevFeu.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SevFeu.baf~
 
 // Severian - torture
@@ -615,7 +619,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SevTor.cre~ ~override~
 SAY NAME1 @45
 SAY NAME2 @45
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SevTor.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SevTor.baf~
 
 // Adrastar
@@ -624,7 +628,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SRhyad.cre~ ~override~
 SAY NAME1 @200018
 SAY NAME2 @200018
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SRhyad.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SRhyad.baf~
 
 // Gardes de Fort-Terreur
@@ -633,7 +637,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SInq1.cre~ ~override~
 SAY NAME1 @200016
 SAY NAME2 @200016
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SInq1.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SInq1.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SInq2.cre~ ~override~
@@ -646,7 +650,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SevPri.cre~ ~override~
 SAY NAME1 @45
 SAY NAME2 @45
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SevPri.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SevPri.baf~
 
 // Adrastar - Version Garde 
@@ -655,7 +659,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SInq4.cre~ ~override~
 SAY NAME1 @200018
 SAY NAME2 @200018
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SInq4.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SInq4.baf~
 
 // Grand Inquisiteur Mordred
@@ -664,7 +668,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SMord.cre~ ~override~
 SAY NAME1 @200017
 SAY NAME2 @200017
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SMord.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SMord.baf~
 
 // Bourreau de Fort-Terreur
@@ -673,7 +677,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SBourr.cre~ ~override~
 SAY NAME1 @200019
 SAY NAME2 @200019
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SBourr.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SBourr.baf~
 
 // Garde de Fort-Terreur
@@ -682,7 +686,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SInq3.cre~ ~override~
 SAY NAME1 @200016
 SAY NAME2 @200016
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SInq3.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SInq3.baf~
 
 // Lord Darkhan
@@ -691,7 +695,7 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#SMask2.cre~ ~override~
 SAY NAME1 @200020
 SAY NAME2 @200020
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SMask2.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SMask2.baf~
 
 
@@ -702,42 +706,42 @@ COPY ~Severian/Creatures/ThroneOfBhaal/#Sarvaj.cre~ ~override~
 SAY NAME1 @43
 SAY NAME2 @43
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#Sarvaj.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#Sarvaj.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SBodhi.cre~ ~override~
 SAY NAME1 @400035
 SAY NAME2 @400035
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SBodhi.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SBodhi.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SIren.cre~ ~override~
 SAY NAME1 @400034
 SAY NAME2 @400034
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SIren.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SIren.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#Sarev.cre~ ~override~
 SAY NAME1 @400033
 SAY NAME2 @400033
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#Sarev.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#Sarev.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SRasEnd.cre~ ~override~
 SAY NAME1 @25
 SAY NAME2 @25
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SRasEnd.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SRasEnd.baf~
 
 COPY ~Severian/Creatures/ThroneOfBhaal/#SVesEnd.cre~ ~override~
 SAY NAME1 @27
 SAY NAME2 @27
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SVesEnd.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SVesEnd.baf~
 
 
@@ -749,28 +753,28 @@ COPY ~Severian/Creatures/#SZhorin.cre~ ~override~
 SAY NAME1 @42
 SAY NAME2 @42
 COMPILE ~Severian/Dialogues/#SZhorin.d~ 
-    USING ~Severian/Translations/French/#SZhorin.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SZhorin.tra~
 COMPILE ~Severian/Scripts/#SZhorin.baf~
 
 COPY ~Severian/Creatures/#SDilyn.cre~ ~override~
 SAY NAME1 @42
 SAY NAME2 @42
 COMPILE ~Severian/Dialogues/#SDilyn.d~ 
-    USING ~Severian/Translations/French/#SDilyn.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SDilyn.tra~
 COMPILE ~Severian/Scripts/#SDilyn.baf~
 
 COPY ~Severian/Creatures/#SAlyo.cre~ ~override~
 SAY NAME1 @42
 SAY NAME2 @42
 COMPILE ~Severian/Dialogues/#SAlyo.d~ 
-    USING ~Severian/Translations/French/#SAlyo.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SAlyo.tra~
 COMPILE ~Severian/Scripts/#SAlyo.baf~
 
 COPY ~Severian/Creatures/#SThor.cre~ ~override~
 SAY NAME1 @42
 SAY NAME2 @42
 COMPILE ~Severian/Dialogues/#SThor.d~ 
-    USING ~Severian/Translations/French/#SThor.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SThor.tra~
 COMPILE ~Severian/Scripts/#SThor.baf~
 
 // Sarvaj l'Entropiste
@@ -779,9 +783,9 @@ COPY ~Severian/Creatures/#SPeyr.cre~ ~override~
 SAY NAME1 @43
 SAY NAME2 @43
 COMPILE ~Severian/Dialogues/#SPeyr.d~ 
-    USING ~Severian/Translations/French/#SPeyr.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SPeyr.tra~
 COMPILE ~Severian/Scripts/#SPeyr.baf~
-USING ~Severian/Translations/French/#SPeyr.tra~
+USING ~Severian/Translations/%LANGUAGE%/#SPeyr.tra~
 
 // Louve
 
@@ -789,7 +793,7 @@ COPY ~Severian/Creatures/#SLouve.cre~ ~override~
 SAY NAME1 @40
 SAY NAME2 @40
 COMPILE ~Severian/Dialogues/#SLouve.d~ 
-    USING ~Severian/Translations/French/#SLouve.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SLouve.tra~
 COMPILE ~Severian/Scripts/#SLouve.baf~
 
 
@@ -832,9 +836,9 @@ COPY ~Severian/Onyx/cre/#SBlaidd.cre~ ~override~ SAY NAME1 @11 SAY NAME2 @11
 COPY ~Severian/Onyx/cre/#SBlaiCr.cre~ ~override~ SAY NAME1 @11 SAY NAME2 @11
 COPY ~Severian/Onyx/eff~ ~override~
 COMPILE ~Severian/Dialogues/#SBlaidd.d~
-    USING ~Severian/Translations/French/#SBlaidd.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SBlaidd.tra~
 COMPILE ~Severian/Dialogues/#SKikOut.d~
-    USING ~Severian/Translations/French/#SBlaidd.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SBlaidd.tra~
 COPY ~Severian/Spells/#SUnSumB.spl~ ~override~
 COPY ~Severian/Items/#SBlClaw.itm~ ~override~
 COMPILE ~Severian/Scripts/#SBlaidd.baf~
@@ -848,9 +852,9 @@ SAY NAME2 @20
 SAY SELECT_COMMON1 	~~ [OGREM01]
 
 COMPILE ~Severian/Dialogues/#SHugor.d~
-    USING ~Severian/Translations/French/#SHugor.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SHugor.tra~
 COMPILE ~Severian/Dialogues/#SNoName.d~
-    USING ~Severian/Translations/French/#SHugor.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SHugor.tra~
 
 
 COPY ~Severian/Creatures/#SMerc1.cre~ ~override~
@@ -873,14 +877,14 @@ COPY ~Severian/Creatures/#SIsaRat.cre~ ~override~
 SAY NAME1 @23
 SAY NAME2 @23
 COMPILE ~Severian/Dialogues/#SIsab.d~
-    USING ~Severian/Translations/French/#SIsab.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SIsab.tra~
 COMPILE ~Severian/Scripts/#SIsab.baf~
 
 COPY ~Severian/Creatures/#SMekhr.cre~ ~override~
 SAY NAME1 @22
 SAY NAME2 @22
 COMPILE ~Severian/Dialogues/#SMekhr.d~
-    USING ~Severian/Translations/French/#SMekhr.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SMekhr.tra~
 
 // TRANS TRIGGER
 
@@ -1036,7 +1040,7 @@ COPY ~Severian/Creatures/#SMoust.cre~ ~override~
 SAY NAME1 @38
 SAY NAME2 @38
 COMPILE ~Severian/Dialogues/#SMoust.d~ 
-    USING ~Severian/Translations/French/#SMoust.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SMoust.tra~
 COMPILE ~Severian/Scripts/#SMoust.baf~
 
 // Mallory
@@ -1045,7 +1049,7 @@ COPY ~Severian/Creatures/#SMallo.cre~ ~override~
 SAY NAME1 @24
 SAY NAME2 @24
 COMPILE ~Severian/Dialogues/#SMallo.d~
-    USING ~Severian/Translations/French/#SMallo.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SMallo.tra~
 COMPILE ~Severian/Scripts/#SMallo.baf~
 
 // Sorkailen
@@ -1054,7 +1058,7 @@ COPY ~Severian/Creatures/#SRasth.cre~ ~override~
 SAY NAME1 @25
 SAY NAME2 @25
 COMPILE ~Severian/Dialogues/#SRasth.d~ 
-    USING ~Severian/Translations/French/#SRasth.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SRasth.tra~
 COMPILE ~Severian/Scripts/#SRasth.baf~
 
 // Hariel
@@ -1063,7 +1067,7 @@ COPY ~Severian/Creatures/#SMaelys.cre~ ~override~
 SAY NAME1 @26
 SAY NAME2 @26
 COMPILE ~Severian/Dialogues/#SMaelys.d~ 
-    USING ~Severian/Translations/French/#SMaelys.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SMaelys.tra~
 COMPILE ~Severian/Scripts/#SMaelys.baf~
 
 // Vesthara 
@@ -1072,7 +1076,7 @@ COPY ~Severian/Creatures/#SVesth.cre~ ~override~
 SAY NAME1 @27
 SAY NAME2 @27
 COMPILE ~Severian/Dialogues/#SVesth.d~ 
-    USING ~Severian/Translations/French/#SVesth.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SVesth.tra~
 COMPILE ~Severian/Scripts/#SVesth.baf~
 
 // Novice Darion
@@ -1081,7 +1085,7 @@ COPY ~Severian/Creatures/#SNovice.cre~ ~override~
 SAY NAME1 @29
 SAY NAME2 @29
 COMPILE ~Severian/Dialogues/#SNovice.d~ 
-    USING ~Severian/Translations/French/#SNovice.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SNovice.tra~
 COMPILE ~Severian/Scripts/#SNovice.baf~
 
 // Séquence d'Imnesvale
@@ -1090,70 +1094,70 @@ COPY ~Severian/Creatures/#SNaenia.cre~ ~override~
 SAY NAME1 @31
 SAY NAME2 @31
 COMPILE ~Severian/Dialogues/#SNaenia.d~ 
-    USING ~Severian/Translations/French/#SNaenia.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SNaenia.tra~
 COMPILE ~Severian/Scripts/#SNaenia.baf~
 
 COPY ~Severian/Creatures/#SMalry.cre~ ~override~
 SAY NAME1 @24
 SAY NAME2 @24
 COMPILE ~Severian/Dialogues/#SMalry.d~ 
-    USING ~Severian/Translations/French/#SMalry.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SMalry.tra~
 COMPILE ~Severian/Scripts/#SMalry.baf~
 
 COPY ~Severian/Creatures/#SevBles.cre~ ~override~
 SAY NAME1 @33
 SAY NAME2 @33
 COMPILE ~Severian/Dialogues/#SevBles.d~ 
-    USING ~Severian/Translations/French/#SevBles.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SevBles.tra~
 COMPILE ~Severian/Scripts/#SevBles.baf~
 
 COPY ~Severian/Creatures/#SKalas.cre~ ~override~
 SAY NAME1 @34
 SAY NAME2 @34
 COMPILE ~Severian/Dialogues/#SKalas.d~ 
-    USING ~Severian/Translations/French/#SKalas.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SKalas.tra~
 COMPILE ~Severian/Scripts/#SKalas.baf~
 
 COPY ~Severian/Creatures/#SDorra.cre~ ~override~
 SAY NAME1 @36
 SAY NAME2 @36
 COMPILE ~Severian/Dialogues/#SDorra.d~ 
-    USING ~Severian/Translations/French/#SDorra.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SDorra.tra~
 COMPILE ~Severian/Scripts/#SDorra.baf~
 
 COPY ~Severian/Creatures/#SDuorok.cre~ ~override~
 SAY NAME1 @35
 SAY NAME2 @35
 COMPILE ~Severian/Dialogues/#SDuorok.d~ 
-    USING ~Severian/Translations/French/#SDuorok.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SDuorok.tra~
 COMPILE ~Severian/Scripts/#SDuorok.baf~
 
 COPY ~Severian/Creatures/#SPerian.cre~ ~override~
 SAY NAME1 @30
 SAY NAME2 @30
 COMPILE ~Severian/Dialogues/#SPerian.d~ 
-    USING ~Severian/Translations/French/#SPerian.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SPerian.tra~
 COMPILE ~Severian/Scripts/#SPerian.baf~
 
 COPY ~Severian/Creatures/#SValy.cre~ ~override~
 SAY NAME1 @32
 SAY NAME2 @32
 COMPILE ~Severian/Dialogues/#SValy.d~ 
-    USING ~Severian/Translations/French/#SValy.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SValy.tra~
 COMPILE ~Severian/Scripts/#SValy.baf~
 
 COPY ~Severian/Creatures/#SPinkie.cre~ ~override~
 SAY NAME1 @37
 SAY NAME2 @37
 COMPILE ~Severian/Dialogues/#SPinkie.d~ 
-    USING ~Severian/Translations/French/#SPinkie.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SPinkie.tra~
 COMPILE ~Severian/Scripts/#SPinkie.baf~
 
 COPY ~Severian/Creatures/#SMichel.cre~ ~override~
 SAY NAME1 @39
 SAY NAME2 @39
 COMPILE ~Severian/Dialogues/#SMichel.d~ 
-    USING ~Severian/Translations/French/#SMichel.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SMichel.tra~
 COMPILE ~Severian/Scripts/#SMichel.baf~
 
 // Charname
@@ -1162,7 +1166,7 @@ COPY ~Severian/Creatures/#SCharna.cre~ ~override~
 SAY NAME1 @46
 SAY NAME2 @46
 COMPILE ~Severian/Dialogues/#SCharna.d~ 
-    USING ~Severian/Translations/French/#SCharna.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#SCharna.tra~
 COMPILE ~Severian/Scripts/#SCharna.baf~
 
 // Les convives du mariage
@@ -1264,14 +1268,14 @@ COPY ~Severian/Bam~ ~override~
 // SCRIPTS DE MAPS POUR SOA
 
 EXTEND_BOTTOM ~AR0704.bcs~ ~Severian/Scripts/#SAr0704.baf~
-     USING ~Severian/Translations/French/#SHugor.tra~
+     USING ~Severian/Translations/%LANGUAGE%/#SHugor.tra~
 EXTEND_BOTTOM ~AR0800.bcs~ ~Severian/Scripts/#SAr0800.baf~
 EXTEND_BOTTOM ~AR0811.bcs~ ~Severian/Scripts/#SAr0811.baf~
 EXTEND_BOTTOM ~AR0509.bcs~ ~Severian/Scripts/#SAr0509.baf~
 EXTEND_BOTTOM ~AR0511.bcs~ ~Severian/Scripts/#SAr0511.baf~
 EXTEND_BOTTOM ~HaerFive.bcs~ ~Severian/Scripts/#S5Flago.baf~
 EXTEND_BOTTOM ~AR1100.bcs~ ~Severian/Scripts/#SAr1100.baf~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 EXTEND_BOTTOM ~AR2000.bcs~ ~Severian/Scripts/#SAr2000.baf~
 EXTEND_BOTTOM ~AR1105.bcs~ ~Severian/Scripts/#SAr1105.baf~
 EXTEND_BOTTOM ~AR1106.bcs~ ~Severian/Scripts/#SAr1106.baf~
@@ -1299,9 +1303,9 @@ COMPILE ~Severian/Scripts/#SCtRom5.baf~
 COMPILE ~Severian/Scripts/#SCutR81.baf~
 COMPILE ~Severian/Scripts/#SCutR82.baf~
 COMPILE ~Severian/Scripts/#SCutR83.baf~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutR84.baf~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutR85.baf~
 COMPILE ~Severian/Scripts/#SCutR86.baf~
 COMPILE ~Severian/Scripts/#SCutR87.baf~
@@ -1322,7 +1326,7 @@ COMPILE ~Severian/Scripts/#SCutPi1.baf~
 COMPILE ~Severian/Scripts/#SCutMaQ.baf~
 COMPILE ~Severian/Scripts/#SCutMQ2.baf~
 COMPILE ~Severian/Scripts/#SCutLou.baf~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutApp.baf~
 COMPILE ~Severian/Scripts/#SCutAp2.baf~
 COMPILE ~Severian/Scripts/#SCutWe1.baf~
@@ -1335,31 +1339,31 @@ COMPILE ~Severian/Scripts/#SCutDe1.baf~
 COMPILE ~Severian/Scripts/#SCutEnl.baf~
 COMPILE ~Severian/Scripts/#SCtRo10.baf~
 COMPILE ~Severian/Scripts/#SCutRet.baf~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutHer.baf~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutSau.baf~
 COMPILE ~Severian/Scripts/#SCutSa2.baf~
 COMPILE ~Severian/Scripts/#SCutCom.baf~
 COMPILE ~Severian/Scripts/#SCutPey.baf~
 COMPILE ~Severian/Scripts/#SCutDra.baf~
-    USING ~Severian/Translations/French/#Sever.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutTra.baf~
- USING ~Severian/Translations/French/#Sever.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutDie.baf~
- USING ~Severian/Translations/French/#Sever.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutAre.baf~
- USING ~Severian/Translations/French/#Sever.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutCab.baf~
- USING ~Severian/Translations/French/#Sever.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCutFi1.baf~
-USING ~Severian/Translations/French/#SevRess.tra~
+USING ~Severian/Translations/%LANGUAGE%/#SevRess.tra~
 COMPILE ~Severian/Scripts/#SCutCan.baf~
-USING ~Severian/Translations/French/#Sever.tra~
+USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCtSar1.baf~
-USING ~Severian/Translations/French/#Sever.tra~
+USING ~Severian/Translations/%LANGUAGE%/#Sever.tra~
 COMPILE ~Severian/Scripts/#SCtSar2.baf~
-USING ~Severian/Translations/French/#SPeyr.tra~
+USING ~Severian/Translations/%LANGUAGE%/#SPeyr.tra~
 COMPILE ~Severian/Scripts/#SHugor1.baf~
 COMPILE ~Severian/Scripts/#SCtLou2.baf~
 
@@ -1368,150 +1372,150 @@ COMPILE ~Severian/Scripts/#SCtLou2.baf~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtVok1.baf~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtVok2.baf~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutMi1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutMi2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutMi3.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutMi4.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutCa1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtEnf1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtEnf2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtEnf3.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtEnf4.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtEnf5.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtEnf6.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtEnf7.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtTel1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtTel2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtTel3.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtTel4.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtTel5.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtTel6.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutCa2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtAdo1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtAdo2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtAdo3.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtAdo4.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtAmk1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtAmk2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtAmk3.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtAmk4.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPri1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPri2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPri3.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPri4.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPri5.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPri6.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPri7.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPri8.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPri9.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPr10.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPr11.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPr12.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtPr13.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutFi1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutFi2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutFi4.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutFi5.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutFi6.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutFi7.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutFi8.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDar2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDar3.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDar4.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtMi20.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtRapp.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtTav1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtTav2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtMask.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutYag.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDar5.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDar6.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDar7.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDar8.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDea1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDea2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDa10.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtDa11.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtGro1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCtGro2.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SCutYa1.baf~
- USING ~Severian/Translations/French/#Sever25.tra~
+ USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 
 
 // SCRIPTS DE MAPS POUR TOB
 
 EXTEND_BOTTOM ~AR6400.bcs~ ~Severian/Scripts/ThroneOfBhaal/#SAr6400.baf~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 EXTEND_BOTTOM ~AR5000.bcs~ ~Severian/Scripts/ThroneOfBhaal/#SAr5000.baf~
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 EXTEND_TOP ~AR5500.bcs~ ~Severian/Scripts/ThroneOfBhaal/#SAr5500.baf~
     EVALUATE_BUFFER
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 EXTEND_TOP ~AR6200.bcs~ ~Severian/Scripts/ThroneOfBhaal/#SAr6200.baf~
 EXTEND_TOP ~AR5003.bcs~ ~Severian/Scripts/ThroneOfBhaal/#SAr5003.baf~
 
@@ -1672,7 +1676,7 @@ SPRINT nom_store @400031
 SAY_EVALUATED 0x000c ~%nom_store%~
 
 COMPILE ~Severian/Dialogues/ThroneOfBhaal/#SRumo.d~ 
-    USING ~Severian/Translations/French/#Sever25.tra~
+    USING ~Severian/Translations/%LANGUAGE%/#Sever25.tra~
 COMPILE ~Severian/Scripts/ThroneOfBhaal/#SRumo.baf~
 
 // SCRIPT ACCELERATEUR DE BANTERS POUR TOB
